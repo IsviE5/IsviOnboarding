@@ -1,0 +1,144 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="OpentheDetailspage" this:OpentheDetailspage.in_ACME_WorkItems="https://acme-test.uipath.com/work-items/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_TaxID" Type="OutArgument(x:String)" />
+    <x:Property Name="in_WorkItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_ACME_WorkItems" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>870,865</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard sap2010:Annotation.AnnotationText="Requirement 1.15.A  Retrieve the Vendor Tax ID" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Open the Details page" sap:VirtualizedContainerService.HintSize="434,800" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="55c08052-ed9d-4b12-8936-abc50c14b3f5" Version="V1" WindowResize="Minimize">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Browser Get Tax ID" sap:VirtualizedContainerService.HintSize="376,553" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="VendorInformation" />
+            <Variable x:TypeArguments="s:String[]" Name="ArrayVendorInformation" />
+            <Variable x:TypeArguments="s:String[]" Name="Arraytwo" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NGetText DisplayName="Get Vendor Information" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="55c08052-ed9d-4b12-8936-abc50c14b3f5" Version="V1">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/work-items/77444378" DesignTimeRectangle="829, 411, 373, 80" ElementType="Text" FriendlyName="'TaxID: RO125678'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' aaname='                              RO125678                              Office Supplies                              Bulevardul Papetariei 57                              Bucuresti, Romania                         ' /&gt;" Guid="cdeaade4-e702-439d-9ee7-33d2b76a94a6" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector, FuzzySelector">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <uix:Target DesignTimeRectangle="829, 413, 42, 16" FriendlyName="'TaxID'" FullSelectorArgument="&lt;webctrl tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' type='' aaname='TaxID:' check:text='TaxID:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAUCAYAAADyWA/8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEhSURBVEhLY/g/RMGow+kNRh1Ob4Dk8Ff/d2cq/Tc2NsaBp/4/ClVJOjjzf7aW/n+h/K3/nyPxsdlTdRGsgCAYdA4H4bDNH8Gq8AEcSQXmiaL/819DhbB4DGEBwiGwELvTy4qkBpfD0QLjbCvUbIS9MHPQY4Joh8MMQMVIHoNaCnLcp3MINrJDCTocCNAdSrHD0QE2A1E9h6yXeId/X5cI1k8ouZDscJjBMIwSEi9W/C/XN8Ri8QA6nKgohKdR5GQCAsQ7HFfSQAdEOhzdIpg8sgUwNdhig0iHw2MM00PogESHIxyF7jhYFDNMvo7FAbgcjmkeCCMnE1wxQHwaR0sGb1+uBDsOu0MRFoLlSXA4ugNJdPjgB6MOpzcYdTh9wf//AKyVu88HQGzNAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+            <uix:NGetText.Text>
+              <OutArgument x:TypeArguments="x:String">[VendorInformation]</OutArgument>
+            </uix:NGetText.Text>
+          </uix:NGetText>
+          <Assign DisplayName="Manipulate Vendor Information" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[ArrayVendorInformation]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Split(VendorInformation.Trim,":")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Get Tax ID" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_TaxID]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[ArrayVendorInformation(1).ToString.Trim.Replace("Name","").Trim]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <WriteLine DisplayName="Tax ID Log" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Tax ID is: &quot;+out_TaxID]" />
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="-8, -8, 2596, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="e4e6c3b8eb77cc0e4081d5727c51f2d2.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items'/&gt;" Url="[in_ACME_WorkItems+in_WorkItem(0).ToString]" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>

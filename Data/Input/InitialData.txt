@@ -1,0 +1,10 @@
+{
+"ACME_URL":"https://acme-test.uipath.com/login",
+"ACME_User":"isvi.acuna@e5.ai",
+"ACME_Pass":"isvie5_2021",
+"MailSender":"isvi.acuna@beeckerco.com",
+"MailPass":"zamora_27",
+"MailTo":"isvi.acuna@e5.ai"
+}
+
+

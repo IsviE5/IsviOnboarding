@@ -1,0 +1,4 @@
+InvoiceNumber,Item,Date,Amount,Tax,Total,Currency
+309359,"Professional Services",2017-05-04,94655,18931,113586,CAD
+653965,"Beverages and Catering",2017-05-03,199897,39979.4,239876,RON
+855259,"IT Support",2017-05-13,32665,6533,39198,CAD
