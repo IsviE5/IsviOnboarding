@@ -1,17 +1,17 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="BuildReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_WIDD" Type="InArgument(x:String)" />
-    <x:Property Name="in_Description" Type="InArgument(x:String)" />
-    <x:Property Name="in_Type" Type="InArgument(x:String)" />
-    <x:Property Name="in_Date" Type="InArgument(x:String)" />
-    <x:Property Name="in_TaxID" Type="InArgument(x:String)" />
-    <x:Property Name="in_UploadID" Type="InArgument(x:String)" />
-    <x:Property Name="in_UploadStatus" Type="InArgument(x:String)" />
-    <x:Property Name="in_Status" Type="InArgument(x:String)" />
-    <x:Property Name="in_Reason" Type="InArgument(x:String)" />
-    <x:Property Name="out_ReportPath" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Work Item ID" Name="in_WIDD" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="WIID Description" Name="in_Description" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction Type" Name="in_Type" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="WIID Date" Name="in_Date" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="WIID Tax ID" Name="in_TaxID" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Updaded Confirmation ID" Name="in_UploadID" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Yearly Report Uploaded Status" Name="in_UploadStatus" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction Status" Name="in_Status" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Status reason" Name="in_Reason" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Final Report File Path" Name="out_ReportPath" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2148,1199</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1842,1199</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -81,6 +81,7 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Requirement 1.7) Generate Final Report&#xA;" DisplayName="Build Report" sap:VirtualizedContainerService.HintSize="755,1134" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -96,17 +97,17 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[ReportDT]" DisplayName="Build Report DT" sap:VirtualizedContainerService.HintSize="713,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;WIID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TaxID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UploadID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UploadStatus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:FileExistsX DisplayName="File Exists" Exists="[ReportExist]" sap:VirtualizedContainerService.HintSize="713,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[&quot;Data\Output\Reports\Report_&quot;+Today.ToString(&quot;MM/dd/yyyy&quot;).Replace(&quot;/&quot;,&quot;_&quot;)+&quot;.xlsx&quot;]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Report Exists: &quot; +ReportExist.ToString]" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_WIDD,in_Description,in_Type,in_Date,in_TaxID,in_UploadID,in_UploadStatus,in_Status,in_Reason}]" DataTable="[ReportDT]" DisplayName="Add Information" sap:VirtualizedContainerService.HintSize="713,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:LogMessage DisplayName="Log that report exist or doesnt" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Report Exists: &quot; +ReportExist.ToString]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_WIDD,in_Description,in_Type,in_Date,in_TaxID,in_UploadID,in_UploadStatus,in_Status,in_Reason}]" DataTable="[ReportDT]" DisplayName="Add Row to DT" sap:VirtualizedContainerService.HintSize="713,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
     <If Condition="[ReportExist= False]" DisplayName="Todays Report Exists?" sap:VirtualizedContainerService.HintSize="713,273" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <ui:WriteRange AddHeaders="True" DataTable="[ReportDT]" DisplayName="Creates Report " sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Reports" StartingCell="A1" WorkbookPath="[&quot;Data\Output\Reports\Report_&quot;+Today.ToString(&quot;MM/dd/yyyy&quot;).Replace(&quot;/&quot;,&quot;_&quot;)+&quot;.xlsx&quot;]" />
       </If.Then>
       <If.Else>
-        <ui:AppendRange DataTable="[ReportDT]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Reports" WorkbookPath="[&quot;Data\Output\Reports\Report_&quot;+Today.ToString(&quot;MM/dd/yyyy&quot;).Replace(&quot;/&quot;,&quot;_&quot;)+&quot;.xlsx&quot;]" />
+        <ui:AppendRange DataTable="[ReportDT]" DisplayName="Append Row to File" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Reports" WorkbookPath="[&quot;Data\Output\Reports\Report_&quot;+Today.ToString(&quot;MM/dd/yyyy&quot;).Replace(&quot;/&quot;,&quot;_&quot;)+&quot;.xlsx&quot;]" />
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Out Report Path" sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_ReportPath]</OutArgument>
       </Assign.To>

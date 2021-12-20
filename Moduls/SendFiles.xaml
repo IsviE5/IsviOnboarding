@@ -1,11 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SendFiles" this:SendFiles.in_MailSender="isvi.acuna@beeckerco.com" this:SendFiles.in_MaiTo="isvi.acuna@e5.ai" this:SendFiles.in_FilePath="E:\Beeckerco\UiPath\E5Onboarding_Isvi\Data\Output\Reports\Report_12_08_2021.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_MailSender" Type="InArgument(x:String)" />
-    <x:Property Name="in_MailPass" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="in_MaiTo" Type="InArgument(x:String)" />
-    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Sender Mail " Name="in_MailSender" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Mail Sender Password" Name="in_MailPass" Type="InArgument(ss:SecureString)" />
+    <x:Property sap2010:Annotation.AnnotationText="Mail Destination" Name="in_MaiTo" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Final Report File Path" Name="in_FilePath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2148,819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1842,819</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -83,14 +83,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uascw:CompressFiles CompressedFileInfo="{x:Null}" Password="{x:Null}" CodePage="Default" CompressedFileName="[IO.Directory.GetCurrentDirectory+&quot;\Data\Output\&quot;+&quot;Yearly Reports &quot;+Now.AddYears(-1).ToString(&quot;yyyy&quot;)+&quot;.zip&quot;]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" sap:VirtualizedContainerService.HintSize="444,213" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+    <uascw:CompressFiles CompressedFileInfo="{x:Null}" Password="{x:Null}" CodePage="Default" CompressedFileName="[IO.Directory.GetCurrentDirectory+&quot;\Data\Output\&quot;+&quot;Yearly Reports &quot;+Now.AddYears(-1).ToString(&quot;yyyy&quot;)+&quot;.zip&quot;]" CompressionLevel="Normal" DisplayName="Compress Montlhy and Yearly Reports" sap:VirtualizedContainerService.HintSize="444,213" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
       <uascw:CompressFiles.ContentToArchive>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">[IO.Directory.GetCurrentDirectory+"\Data\Output\"+Now.AddYears(-1).ToString("yyyy")]</InArgument>
         </scg:List>
       </uascw:CompressFiles.ContentToArchive>
     </uascw:CompressFiles>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="The process finished succesfully, output files attached." DisplayName="Send SMTP Mail Message" Email="[in_MailSender]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="444,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="zamora_27" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="On Boarding Isvi Bot" To="[in_MaiTo]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="The process finished succesfully, output files attached." DisplayName="Send Files to End Process" Email="[in_MailSender]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="444,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="zamora_27" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="On Boarding Isvi Bot" To="[in_MaiTo]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">[IO.Directory.GetCurrentDirectory+"\Data\Output\"+"Yearly Reports "+Now.AddYears(-1).ToString("yyyy")+".zip"]</InArgument>

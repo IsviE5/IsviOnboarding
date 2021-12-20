@@ -1,10 +1,10 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="InitAllApplicattions" this:InitAllApplicattions.AcmeUrl="https://acme-test.uipath.com/login" this:InitAllApplicattions.AcmeUser="isvi.acuna@e5.ai" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Url Path to Open Acme Application&#xA;" Name="AcmeUrl" Type="InArgument(x:String)" />
-    <x:Property Name="AcmePass" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="AcmeUser" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="ACME Password&#xD;&#xA;" Name="AcmePass" Type="InArgument(ss:SecureString)" />
+    <x:Property sap2010:Annotation.AnnotationText="ACME User " Name="AcmeUser" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>994,2218</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1182,2218</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -75,7 +75,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Init All Applicattions" sap:VirtualizedContainerService.HintSize="1004,2153" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -87,7 +86,7 @@
     <ui:LogMessage DisplayName="Log Message Open Acme" sap:VirtualizedContainerService.HintSize="962,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Acme&quot;]" />
     <TryCatch DisplayName="Try To Login Acme" sap:VirtualizedContainerService.HintSize="962,1930" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="924,1703" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="ACME Login Sequence" sap:VirtualizedContainerService.HintSize="924,1703" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,7 +119,7 @@
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" DesignTimeRectangle="798, 376, 485, 34" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' aaname='Email:' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' aaname='Email:' /&gt;" Guid="ac420ef1-773c-4ef8-908a-6915a94ac569" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVHhe7dUxAQAADMOg+Tfd2cgBJrgBAEmSBoAoSQNAlKQBIErSABAlaQCIkjQAREkaAKIkDQBRkgaAKEkDQJSkASBK0gAQJWkAiJI0AERJGgCiJA0AUZIGgChJA0CUpAEgStIAECVpAIiSNABESRoAoiQNAFGSBoAoSQNAlKQBIErSABAlaQCIkjQAREkaAKIkDQBRkgaAKEkDQJSkASBK0gAQJWkASNoeYZdGmKOCgCcAAAAASUVORK5CYII=" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="798, 351, 42, 20" ElementType="Text" FriendlyName="'Email'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' aaname='Email:' check:text='Email:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAYAAACFms+HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADwSURBVFhH7ZMxDsIwDAD7A17BM5iRGDsg5VX8gQcwIVg6MvEEZgZWxE5IE6dJ3FSp0tSikk+yVKepfXXTSi4UFqeGxalhcWoC8e+ulkKIaBxgT3mOqD7O4/yBOCZb/APZAKeN2tOoi2f/pfS9dg3XMDI21ldY1qQm/tB59YYUyBR3EiYaeTlvgzXXyDTGMSyaLd5vYiYMgHhX+LXSuZuiaRRO1QeLpMTjZIp7eaTRrd5Hxdt1W3MG8bFn3JISxxOebeKFxeEo3SG1+4mOitcoUxzHePFJP+cEcYWrC8/pGvbLFhBfEixODYtTw+K0SPkDO5cHDXQwYhgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
@@ -131,7 +130,7 @@
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/login" DesignTimeRectangle="798, 450, 485, 34" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' id='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' id='password' aaname='Password:' /&gt;" Guid="02525cad-7b18-4ffa-85ce-ce8912d0a137" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVHhe7dUxAQAADMOg+Tfd2cgBJrgBAEmSBoAoSQNAlKQBIErSABAlaQCIkjQAREkaAKIkDQBRkgaAKEkDQJSkASBK0gAQJWkAiJI0AERJGgCiJA0AUZIGgChJA0CUpAEgStIAECVpAIiSNABESRoAoiQNAFGSBoAoSQNAlKQBIErSABAlaQCIkjQAREkaAKIkDQBRkgaAKEkDQJSkASBK0gAQJWkASNoeYZdGmKOCgCcAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="798, 425, 71, 20" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl aaname='Password:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password:' tag='LABEL' type='' check:text='Password:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAYCAYAAACyVACzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHBSURBVFhH7ZQ7TsQwEIb3BpyCco/ABSi3QMqpuAMFJS0N5VYcgROwi1YI0RPiedgzY8fJrISEVvNLoyjxPD/b2Yyh1QpYDgUshwKWQwHLoYDlUMBySMH6ud2NwzBUdk/rF6unm2nOb3qZ1ypYyS4a2PmwbNAbwNp80eskC/WVvqPQn+36mT5nza9X9d+vwEduVPKRMfvdXc4lewRR/OF0JB/O/ZBjIHcFq545yQ8LEpdh0UqMbJ5NFu2uw3Av9DKJahU42AvDa+VSm0Ow2LCO3qxiZ8FqJbKnRwgGKgOmAWwRqf76HAwaRMJsnDqGm3slH1WPfGQc1rGHpNYqWE1Qatfq08CmhklaWC8wERxfIegBYnGo3i3IOalH2X8zTuTtacU1NILEFo54J0nw9X+rs06NH05beCYlgI+fH/pUNgf8Z7BSw3I4jKlhZc3AzKrWy8831wEf/GavmDqZ5Gd9JCz2KXEI+M9gYXJpPCwX1lbgLq2juIY9Iba3Vi8qVwvWTA86N/rYf6v/Goqdl/+WeqdaTSQtrXMfckiMsVCTJDA7XBtWkpkBTpsTVqivgOVQwHIoYDkUsBwKWA4FrNUax18r3ySdhUYLmwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>

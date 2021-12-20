@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2148,1527" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1182,2033" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
@@ -63,10 +63,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Main Sequence of Generate Yearly Report" DisplayName="MAIN" sap:VirtualizedContainerService.HintSize="526,1462" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main Sequence of Generate Yearly Report" DisplayName="MAIN" sap:VirtualizedContainerService.HintSize="526,1968" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ACME_Url" />
       <Variable x:TypeArguments="ss:SecureString" Name="ACME_Pass" />
@@ -107,79 +106,38 @@
         <InArgument x:TypeArguments="x:String">Nothing</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try to Init all Settings " sap:VirtualizedContainerService.HintSize="484,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="" DisplayName="Try to Init all Settings " sap:VirtualizedContainerService.HintSize="484,370" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitallSettings workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Moduls\InitallSettings.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_URL">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_Url" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="ss:SecureString" x:Key="ACME_Pass">
-              <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="ACME_Pass" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_User">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_User" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="MailSender">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="MailSender" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="ss:SecureString" x:Key="MailPass">
-              <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="MailPass" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="MailTo">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="MailTo" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="LoginAcmeUrl">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="LoginAcmeUrl" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_Home">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_Home" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_WorkItems">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_WorkItems" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_DownloadsPage">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_DownloadsPage" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_UploadPage">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_UploadPage" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ACME_UploadWorkItem">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ACME_UploadWorkItem" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="AutomationHub_User">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="AutomationHub_User" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="ss:SecureString" x:Key="AutomationHub_Pass">
-              <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="AutomationHub_Pass" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="E5HookURL">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="E5HookURL" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ClientName">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ClientName" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="DeepLink">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="DeepLink" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="njl:JObject" x:Key="FlowConfig">
-              <mva:VisualBasicReference x:TypeArguments="njl:JObject" ExpressionText="FlowConfig" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="SummaryFieldNames">
-              <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="SummaryFieldNames" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="TaskRunID">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="TaskRunID" />
-            </OutArgument>
-            <OutArgument x:TypeArguments="x:String" x:Key="ProcessIdentifier">
-              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ProcessIdentifier" />
-            </OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_URL">[ACME_Url]</OutArgument>
+            <OutArgument x:TypeArguments="ss:SecureString" x:Key="ACME_Pass">[ACME_Pass]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_User">[ACME_User]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="MailSender">[MailSender]</OutArgument>
+            <OutArgument x:TypeArguments="ss:SecureString" x:Key="MailPass">[MailPass]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="MailTo">[MailTo]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="LoginAcmeUrl">[LoginAcmeUrl]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_Home">[ACME_Home]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_WorkItems">[ACME_WorkItems]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_DownloadsPage">[ACME_DownloadsPage]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_UploadPage">[ACME_UploadPage]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ACME_UploadWorkItem">[ACME_UploadWorkItem]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="AutomationHub_User">[AutomationHub_User]</OutArgument>
+            <OutArgument x:TypeArguments="ss:SecureString" x:Key="AutomationHub_Pass">[AutomationHub_Pass]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="E5HookURL">[E5HookURL]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ClientName">[ClientName]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="DeepLink">[DeepLink]</OutArgument>
+            <OutArgument x:TypeArguments="njl:JObject" x:Key="FlowConfig">[FlowConfig]</OutArgument>
+            <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="SummaryFieldNames">[SummaryFieldNames]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="TaskRunID">[TaskRunID]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ProcessIdentifier">[ProcessIdentifier]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
@@ -207,15 +165,15 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If Condition="[ProcessFailure.Equals(&quot;Nothing&quot;)]" DisplayName="Continue to Init All Applications? " sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[ProcessFailure.Equals(&quot;Nothing&quot;)]" DisplayName="Continue to Init All Applications? " sap:VirtualizedContainerService.HintSize="484,526" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <TryCatch DisplayName="Try to Init All Applicattions" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try to Init All Applicattions" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,10 +190,10 @@
             </ui:InvokeWorkflowFile>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -326,28 +284,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+        <TryCatch DisplayName="Try Process" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="TransactionData">
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TransactionData" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_WorkItems">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ACME_WorkItems" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_DownloadsPage">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ACME_DownloadsPage" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_UploadPage">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ACME_UploadPage" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_UploadWorkItem">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ACME_UploadWorkItem" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_ReportPath">
-                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ReportPath" />
-                </OutArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="TransactionData">[TransactionData]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_WorkItems">[ACME_WorkItems]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_DownloadsPage">[ACME_DownloadsPage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_UploadPage">[ACME_UploadPage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ACME_UploadWorkItem">[ACME_UploadWorkItem]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_ReportPath">[ReportPath]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </TryCatch.Try>
@@ -388,21 +334,11 @@
     </If>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EndProcess workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Moduls\EndProcess.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_MailPass">
-          <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="MailPass" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MailSender">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MailSender" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MailTo" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReportPath" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SumaryFieldNames">
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="SummaryFieldNames" />
-        </InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_MailPass">[MailPass]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MailSender">[MailSender]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[MailTo]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">[ReportPath]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SumaryFieldNames">[SummaryFieldNames]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
